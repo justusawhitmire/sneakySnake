@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">Snake Game</string>
-    <string name="Main_title">Sneaky Snake</string>
-    <string name="leaderboard">Leaderboard</string>
-    <string name="play">Play</string>
-    <string name="snake_logo">Snake Logo</string>
 </resources>
