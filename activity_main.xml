@@ -1,78 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sand"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    tools:context=".MainActivity">
 
-    <!--Title text-->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="@color/black"
-        android:padding="10dp"
-        android:shadowDx="-5"
-        android:shadowDy="4"
-        android:shadowRadius="9"
-        android:text="@string/Main_title"
-        android:textColor="@color/off_white"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+    <com.example.snakegame.GameView
+        android:id="@+id/gv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--Button that takes you to the game-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="75dp"
+    </com.example.snakegame.GameView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@drawable/rounded_corner"
-        android:text="@string/play"
-        android:textColor="@color/off_white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        android:background="#102800"
+        android:alpha="0.8"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:src="@drawable/apple"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"/>
+                <TextView
+                    android:id="@+id/txt_score"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:text=" x 0 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
 
-    <!--Button that takes you to the leaderboard-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:text="@string/leaderboard"
-        android:textColor="@color/off_white"
-        android:padding="15dp"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_corner"
-        android:id="@+id/appCompatButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+            </LinearLayout>
 
-    <!--Snake logo-->
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:contentDescription="@string/snake_logo"
-        android:cropToPadding="true"
-        android:padding="10dp"
-        android:src="@drawable/snek"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:src="@drawable/ic_baseline_emoji_events_24"
+                    app:tint="#FFEB3B"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"/>
+                <TextView
+                    android:id="@+id/txt_best_score"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:text=" x 0 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout> 
